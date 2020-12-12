@@ -1,0 +1,39 @@
+/*
+Problem Link 	: https://codeforces.com/problemset/problem/1353/B
+
+
+Approach 		 :  Sort two arrays. then swap the value from left side of array A and right side of array B. Then sum all array values and print it.
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+ 
+ 
+int main() {
+   int t,n,m;
+   cin>>t;
+   while(t--){
+   	cin>>n>>m;
+   	int sum=0;
+   	int arr[n],brr[n];
+   	for(int i=0;i<n;i++) cin>>arr[i];
+   	for(int i=0;i<n;i++) cin>>brr[i];
+   	
+   	sort(arr,arr+n);
+   	sort(brr,brr+n);
+   	
+   	
+   	for(int i=0;i<m;i++){
+   	   if(arr[i]<brr[n-i-1])
+   	   	  arr[i]=brr[n-i-1];	
+   	   else 
+		  break;
+	}	
+	for(int i=0;i<n;i++)
+	   sum+=arr[i];
+	cout<<sum<<endl;
+   	
+   }
+  
+}
