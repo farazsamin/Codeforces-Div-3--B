@@ -1,0 +1,30 @@
+/*
+Problem Link 	:  https://codeforces.com/problemset/problem/1385/B
+
+ 
+Approach 		  :  Take elements from left to right. If it is already taken,then go to next step.only take the unique value and print it.
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ 
+ 
+int main() {
+  int t,n;
+  cin>>t;
+  while(t--){
+  	cin>>n;
+  	int arr[2*n+1];
+  	vector<int>v,used(n+1);
+  	for(int i=0;i<2*n;i++){
+  		cin>>arr[i];
+  		if(used[arr[i]]==0){
+  			v.push_back(arr[i]);
+  			used[arr[i]]=1;
+		  }
+	  }
+	for(int i=0;i<n;i++) cout<<v[i]<<" ";
+	cout<<endl;
+  }
+}
